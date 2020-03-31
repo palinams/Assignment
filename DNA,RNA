@@ -22,9 +22,9 @@ public class Solution {
         int[] nucleotides = {0,0,0,0};
         for (int i=0; i<DNA.length(); i++) {
             if (DNA.charAt(i) == 'A') {nucleotides[0]++;}
-            if (DNA.charAt(i) == 'T') {nucleotides[1]++;}
+            if (DNA.charAt(i) == 'C') {nucleotides[1]++;}
             if (DNA.charAt(i) == 'G') {nucleotides[2]++;}
-            if (DNA.charAt(i) == 'C') {nucleotides[3]++;}
+            if (DNA.charAt(i) == 'T') {nucleotides[3]++;}
         }
         return nucleotides;
     }
