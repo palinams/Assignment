@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    static String ToRNA(String DNA) {
+        String RNA = DNA.replace("T", "U");
+        return RNA;
+    }
+
+    static String Transcription(String DNA) {
+        String DNA2 = "";
+        for (int i=DNA.length()-1; i>=0; i--) {
+            if (DNA.charAt(i) == 'A') {DNA2 += "T";}
+            if (DNA.charAt(i) == 'T') {DNA2 += "A";}
+            if (DNA.charAt(i) == 'G') {DNA2 += "C";}
+            if (DNA.charAt(i) == 'C') {DNA2 += "G";}
+        }
+        return DNA2;
+    }
+
+    static int[] NucleotidesCounter(String DNA) {
+        int[] nucleotides = {0,0,0,0};
+        for (int i=0; i<DNA.length(); i++) {
+            if (DNA.charAt(i) == 'A') {nucleotides[0]++;}
+            if (DNA.charAt(i) == 'T') {nucleotides[1]++;}
+            if (DNA.charAt(i) == 'G') {nucleotides[2]++;}
+            if (DNA.charAt(i) == 'C') {nucleotides[3]++;}
+        }
+        return nucleotides;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String DNA = scan.next();
+        scan.close();
+
+        System.out.println(ToRNA(DNA));
+        System.out.println(Transcription(DNA));
+        int[] counter = NucleotidesCounter(DNA);
+        System.out.print("[" + counter[0] + ", " + counter[1] + ", " + counter[2] + ", " + counter[3] + "]");
+    }
+}
