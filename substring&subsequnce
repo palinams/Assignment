@@ -117,7 +117,7 @@ public class StringOperations {
         String B = scan.next();
         scan.close();
 
-        //System.out.println(LongestCommonSubstring(A, B));
+        System.out.println(LongestCommonSubstring(A, B));
         System.out.println(LongestCommonSubsequence(A, B));
 
     }
